@@ -3,8 +3,8 @@ import * as dotenv from 'dotenv'
 dotenv.config();
 
 const AIRTABLE_ACCESS_TOKEN = process.env.AIRTABLE_ACCESS_TOKEN;
-const AIRTABLE_BASE_ID = 'appYTggkCoiSlmC36';
-const AIRTABLE_TABLE_ID = 'tbl7jsyUrCZJZjAza';
+const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID;
+const AIRTABLE_TABLE_ID = process.env.AIRTABLE_TABLE_ID;
 const CHARGERS = JSON.parse(process.env.CHARGERS);
 
 async function main() {
