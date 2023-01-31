@@ -1,21 +1,33 @@
-# kWH Updater
+# Go-E kWH Aggregator
+
+You can use this if you have multiple Go-E (one per user) but only one utility bill that you want to split among those users. It downloads the measurements through Go-E Cloud API and uploads the data to an Airtable Base for further aggregation.
 
 .env:
 ```
 CHARGERS={ "CHARGER1": "CLOUD_TOKEN_CHARGER1", "CHARGER2": "CLOUD_TOKEN_CHARGER2" }
-AIRTABLE_BASE_ID=appYTggkCoiSlmC36
-AIRTABLE_TABLE_ID=tbl7jsyUrCZJZjAza
+AIRTABLE_BASE_ID=xxx
+AIRTABLE_MEASUREMENTS_TABLE_ID=xxx
+AIRTABLE_UTILITY_BILLS_TABLE_ID=xxx
 AIRTABLE_ACCESS_TOKEN=***
 ```
 
-Airtable:
+## Airtable Setup
 
+Table "Measurements":
 - Date (Date)
 - Charger (Text)
 - kWH (Number)
 
+Table "Aggregation":
+- Abrechnungsdatum (Date)
+- Abrechnung von (Date)
+- Abrechnung bis (Date)
+- Kosten Total (Currency)
+- Measurements (Reference Field to Measurements, multi-value)
 
-Example for Cronjob Scheduler in Docker Swarm:
+## Cronjob Example for Docker Swarm
+
+First deploy crazymax/swarm-cronjob Cronjob Orchestrator like this:
 
 ```
 version: "3.2"
@@ -36,4 +48,4 @@ services:
           - node.platform.arch == x86_64
 ```
 
-Then docker stack deploy -c docker-stack.yml allmengang-kwh
+Then use the example docker-stack.yml to deploy the stack

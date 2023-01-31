@@ -5,7 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node --no-warnings index.js"
+    "start": "node --no-warnings -r dotenv/config index.js"
   },
   "author": "",
   "license": "ISC",
