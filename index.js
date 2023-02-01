@@ -28,4 +28,4 @@ async function shakeItUp(utilityBills, measurements) {
     });
 }
 
-main().then((fullfilled) => process.exit(fullfilled ? 0 : 1))
+main().then(() => process.exit(0), () => process.exit(1))
