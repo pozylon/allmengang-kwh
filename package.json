@@ -1,12 +1,12 @@
 {
-  "name": "allmengang-kwh",
+  "name": "go-e-flux-compensator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node --no-warnings -r dotenv/config index.js",
-    "dockerize": "docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v8 -t pozylon/allmengang-kwh:latest --push ."
+    "dockerize": "docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v8 -t pozylon/go-e-flux-compensator:latest --push ."
   },
   "author": "",
   "license": "ISC",

@@ -1,4 +1,4 @@
-# Go-E kWH Aggregator
+# Go-E Flux Compensator
 
 You can use this if you have multiple Go-E (one per user) but only one utility bill that you want to split among those users. It downloads the measurements through Go-E Cloud API and uploads the data to an Airtable Base for further aggregation.
 

@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   sync-to-airtable:
-    image: pozylon/allmengang-kwh
+    image: pozylon/go-e-flux-compensator
     env_file: .env
     deploy:
       replicas: 0
